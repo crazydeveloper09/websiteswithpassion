@@ -1,3 +1,5 @@
+const { default: contentSecurityPolicy } = require("helmet/dist/middlewares/content-security-policy");
+
 const express             = require("express"),
     app                   = express(),
     bodyParser            = require("body-parser"),
@@ -33,7 +35,8 @@ app.use(flash());
 app.use(methodOverride("_method"));
 app.use(cookieParser());
 app.use(helmet({
-    crossOriginResourcePolicy: false
+    crossOriginResourcePolicy: false,
+    contentSecurityPolicy: false
 }))
 i18n.configure({
     locales: ["en", "de", "pl"],

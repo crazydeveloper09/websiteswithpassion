@@ -54,7 +54,7 @@ router.get("/new", isLoggedIn, function(req, res){
 
 
 router.get("/:link", function(req, res){
-    Project.findOne({subpageLink: req.params.link}).populate(["categories", "pictures"]).exec(function(err, project){
+    Project.findOne({subpageLink: req.params.link}).populate(["categories"]).exec(function(err, project){
         if(err) {
             console.log(err);
         } else {
@@ -81,11 +81,8 @@ router.get("/", cors(), function(req, res){
         } else {
             Category.find({}).exec((err, categories) => {
                 i18n.setLocale(req.language);
-                let data = {
-                    projects: projects,
-                    categories: categories
-                };
-                res.json(data);
+                let header = `Projekty | Websites With Passion`;
+                res.render("./projects/index", {projects: projects, currentUser: req.user, header: header, categories: categories});
             });
             
         }

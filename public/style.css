@@ -163,6 +163,7 @@ a:hover {
 
 .img-thumbnail {
   border: 0;
+  background: none;
 }
 
 #logo {
