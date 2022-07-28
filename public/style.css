@@ -1,0 +1,329 @@
+
+
+body,html {
+  background: #010626;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.navbar.scrolled {
+  background-color: #03258C;
+  transition: background 500ms;
+}
+
+#mainNav .nav-link.active {
+ 
+  
+  font-weight: 700;
+  color: #F2AC57;
+}
+
+#mainNav .navbar-nav {
+  vertical-align: middle;
+}
+.progress {
+  background:#121212;
+} 
+#mainNav .nav-link:hover {
+  
+  font-weight: 700;
+  color: #F2AC57;
+}
+.alert-info,
+.alert-danger,
+.alert-light {
+  border-color: #03258C;
+ color:white;
+  background:#03258C;
+}
+#mainNav .nav-link {
+	
+	text-transform: uppercase;
+  
+  color: #0487D9;
+}
+
+.bg-black {
+  background:#010626;
+}
+
+
+.button-small {
+ 
+  
+ 
+  text-decoration: none;
+  color: white;
+  border-radius: 9px;
+}
+
+#contactDiv {
+  width: 100%;
+  background: #030C3A;
+  margin-top: 70px; 
+  color: #F2AC57;
+}
+
+.button-yellow {
+  border-color: #0487D9;
+  background-color: #0487D9;
+  font-weight: 700;
+  color: #010626;
+  margin-top: 10px;
+}
+
+.button-red {
+  border-color: #03258C;
+  background-color: #03258C;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+.button-orange {
+  border-color: #F2AC57;
+  background-color: #F2AC57;
+  color: #010626;
+  font-weight: 700;
+  margin-top: 10px;
+}
+#subpageTitle {
+  font-family: 'Pacifico', cursive;
+  color: #EBEEFE;
+  font-size: 33px;
+}
+#projectLink {
+  color: #F2AC57;
+  text-decoration: none;
+}
+a {
+  color: #F2AC57;
+  text-decoration: none;
+}
+a:hover {
+  color: #f6941c;
+}
+#name {
+    
+    text-decoration: none;
+    color: white;
+    font-size:28px;
+    
+}
+#projectLink:hover,
+#name:hover {
+  color: #f6941c;
+}
+
+
+#description_r {
+  color: #c9c7c7;
+  font-size:17px;
+  
+}
+
+
+.project_description {
+  
+    
+    color: #EBEEFE;
+    font-size: 20px;
+}
+.additionalInfos {
+  
+  color: #EBEEFE;
+  font-size: 17px;
+  font-weight: 700;
+  
+}
+
+.icon {
+  margin-right: 6px;
+}
+#description_l {
+  color: #c9c7c7;
+  font-size:15px;
+  
+}
+.normal {
+    
+    
+    color: #EBEEFE;
+    font-size: 20px;
+}
+.card {
+  background: transparent;
+  border-color: #03258C;
+  box-shadow: 0 0 5px 5px #03258C;
+}
+
+.modal-content {
+  background: #03258C;
+  border-color: #03258C;
+  box-shadow: 0 0 5px 5px  #03258C;
+}
+
+.img-thumbnail {
+  border: 0;
+}
+
+#logo {
+  font-family: 'Indie flower', cursive;
+  margin-left: 5px;
+  font-size: 25px;
+}
+.star {
+  cursor:pointer;
+}
+.normalf {
+    
+    
+    color:  white;
+    font-size:19px;
+}
+.footer {
+	
+    
+    color: white;
+    font-size:13px;
+}
+.date {
+  
+  text-transform: uppercase; 
+  color: white;
+  font-size:15px;
+}
+
+
+.dateO {
+  
+  font-weight: 700;
+  color: #0487D9;
+  font-size:17px;
+}
+.author {
+  
+  font-weight: 700;    
+  color: white;
+  font-size:18px;
+}
+.about {
+	
+	    
+	  color:#EBEEFE;
+	  font-size:20px;
+}
+
+.icon {
+  margin-right: 7px;
+}
+.language {
+	color:#F2AC57;
+	
+  font-size: 13px;
+	padding: 5px;
+}
+
+
+.main {
+  
+  color: #F2AC57;
+  font-size: 50px;
+  
+  text-shadow: -1px 0 #0487D9, 0 1px #0487D9, 1px 0 #0487D9, 0 -1px #0487D9;
+}
+
+.technologies {
+  
+  color: #F2AC57;
+  font-size: 20px;
+  
+  
+}
+.whatOffer {
+  
+  color: #F2AC57;
+  font-size: 26px;
+}
+.do {
+	
+  color: #EBEEFE;
+  font-size: 24px;
+}
+
+
+
+.fa, .fas {
+  font-weight: 600;
+}
+
+
+#nav {
+	height: 58px;
+}
+
+
+.desc {
+  
+  color: #0487D9;
+  font-size: 33px;
+}
+
+
+
+#whoAmI {
+  font-family: 'Pacifico', cursive;
+  text-align: center;
+  font-size: 50px;
+  color: #F2AC57;
+}
+
+#about_me {
+  
+  font-size: 22px;
+  color: #EBEEFE;
+  text-align: center;
+}
+.dropbtn {
+  
+  cursor: pointer;
+}
+
+
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  border-radius: 6px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  
+  display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+@media (max-width: 992px){
+	#nav {
+		height: 45px;
+  }
+  #description_l {
+    color: white;
+    font-size:15px;
+    
+  }
+  
+}

@@ -1,0 +1,95 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  background: #010626;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+#info {
+  background: #010626;
+  height: 100vh;
+}
+#form {
+  background:#010626;
+  height: 100vh;
+}
+
+a {
+  
+  font-size: 20px;
+  color:  #F2AC57;
+  text-decoration: none;
+}
+
+.stars {
+  color: #0487D9;
+  font-size: 24px;
+}
+
+.active {
+  color: goldenrod;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border: 3px solid #F2AC57;
+}
+
+#websiteName {
+  font-family: 'Pacifico', cursive;
+  color: white;
+  font-size: 45px;
+}
+
+#desc {
+  
+  color: white;
+  font-size: 25px;
+}
+
+#form .login {
+  
+  font-size: 45px;
+  font-weight: 700;
+  color:#F2AC57;
+  margin-top: 20px;
+  margin-bottom: 35px;
+}
+
+#form .username {
+  
+  font-size: 18px;
+  font-weight: 700;
+  color: #010626;
+}
+
+.button {
+  width: 100%;
+  margin-bottom: 15px;
+  
+  font-weight: 700;
+  color: #010626;
+  background: #F2AC57;
+  border-color: #F2AC57;
+}
+
+@media (max-width: 992px) {
+  #info {
+      display: none;
+  }
+  #form1 {
+      margin: 4%;
+  }
+  body {
+    margin: 0;
+    background:#010626;
+  }
+  .container-full {
+    margin: 0;
+  }
+}
+
+#description_r {
+  color: rgb(114, 114, 114);
+  font-size:18px;
+  
+}

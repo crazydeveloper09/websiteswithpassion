@@ -1,0 +1,6 @@
+.env
+chain.cer
+crt.cer
+key.cer
+.now
+/node_modules

@@ -1,0 +1,57 @@
+<% include ../partials/headera %>
+<div class="col-lg-6 col-md-12" id="form">
+	<div class="row justify-content-center">
+		<div class="col-lg-8 col-md-12" style="margin-top: 17%">
+			<div id="form1">
+				<a href="/projects">
+					<i class="fas fa-arrow-left"></i>
+					Wróć do strony z projektami
+				</a>
+				<h1 class="login">Dodaj kategorię</h1>
+				<% if(error.length > 0){ %>
+					<div class="alert alert-danger" role="alert">
+						<%= error %>
+					</div>
+				<% } %>
+                    <form action="/projects/category" method="post">
+                        
+                        <div class="form-floating mb-3">
+                       
+                            <input type="text" id="title" name="title" class="form-control" placeholder="Tytuł po polsku">
+                            <label for="title" class="username">
+                                Nazwa po polsku
+                                
+                            </label>
+                            
+                        </div>
+                       
+                        
+                        <div class="form-floating mb-3">
+                       
+                            <input type="text" id="titleEn" name="titleEn" class="form-control" placeholder="Tytuł po angielsku">
+                            <label for="titleEn" class="username">
+                                Nazwa po angielsku
+                                
+                            </label>
+                            
+                        </div>
+                      
+							<div class="form-floating mb-3">
+                       
+                                <input type="color" id="color" name="color" class="form-control" placeholder="Kolor kategorii">
+                                <label for="color" class="username">
+                                   Kolor kategorii
+                                    
+                                </label>
+                                
+                            </div>
+							
+                        <input type="submit" value="Dodaj kategorię" class="btn btn-primary button">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include("../partials/footera") %>

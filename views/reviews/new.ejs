@@ -1,0 +1,102 @@
+<% include ../partials/headera %>
+<div class="col-lg-6 col-md-12" id="form">
+	<div class="row justify-content-center">
+		<div class="col-lg-8 col-md-12" style="margin-top: 10%">
+			<div id="form1">
+				<a href="/projects/<%= project.subpageLink %>">
+                    <i class="fas fa-arrow-left"></i>
+                    <%= language.__('Wróć do strony projektu') %> <%= project.title %> <% if(lang == "en"){ %>
+                        project
+                    <% } %>
+					
+				</a>
+				<h1 class="login">
+                    <%= language.__('Dodaj opinię o projekcie') %> <%= project.title %> <% if(lang == "en"){ %>
+                        project
+                    <% } %>
+                </h1>
+				<% if(error.length > 0){ %>
+					<div class="alert alert-danger" role="alert">
+						<%= error %>
+					</div>
+				<% } %>
+ 
+                    <form action="/projects/<%= project._id %>/reviews" method="post">
+                        <p class="username" style="color: #F2AC57;font-size: 25px;"><%= language.__("Ocena") %></p>
+                        <div id="ratingDiv">
+                            <% for(let i=0;i<=4;i++){ %>
+                                <div class="star d-inline" id="<%= i %>"><i class="fas fa-star stars"></i></div>
+                            <% } %>
+                        </div>
+                       
+                       
+                        <br>
+                        <input type="text" id="stars" value="" name="stars" hidden>
+                       
+                        
+                        <div class="form-floating mb-3">
+                       
+                            <textarea name="text" id="description" class="form-control" placeholder="<%= language.__('Wpisz opinię') %>"></textarea>
+                            <label for="description" class="username">
+                                <%= language.__('Opinia') %>
+                                
+                            </label>
+                            
+                        </div>
+                       
+                        <div class="form-floating mb-3">
+                       
+                            <input type="text" name="username" id="username" autocomplete="off" placeholder="<%= language.__("Wpisz swoje imię") %>" class="form-control">
+                            <label for="username" class="username">
+                                <%= language.__('Twoje imię') %>
+                                
+                            </label>
+                            
+                        </div>
+                        <input type="submit" value="<%= language.__('Dodaj opinię') %>" class="btn btn-primary button">
+                    </form>
+                </div>
+            </div>
+        </div>
+      </div>
+  </div>
+  <script>
+      $(".star").on('click', function(){
+        
+        document.getElementById("stars").value = this.id;
+        for(let i=0; i<= 4;i++){
+            document.getElementById(i).querySelector('.fa-star').style.color = "";
+        }
+        for(let i=0; i<= this.id;i++){
+            document.getElementById(i).querySelector('.fa-star').style.color = "goldenrod";
+        }
+        
+      });
+
+      $(".star").on('mouseover', function(){
+        
+        document.getElementById("stars").value = this.id;
+        for(let i=0; i<= 4;i++){
+            document.getElementById(i).querySelector('.fa-star').style.color = "";
+        }
+        for(let i=0; i<= this.id;i++){
+            document.getElementById(i).querySelector('.fa-star').style.color = "goldenrod";
+        }
+        
+      });
+
+      $(".star").on('mouseout', function(){
+        
+        document.getElementById("stars").value = this.id;
+        for(let i=0; i<= 4;i++){
+            document.getElementById(i).querySelector('.fa-star').style.color = "";
+        }
+        for(let i=0; i<= this.id;i++){
+            document.getElementById(i).querySelector('.fa-star').style.color = "goldenrod";
+        }
+        
+      });
+
+      
+  </script>
+<%- include("../partials/footera") %>

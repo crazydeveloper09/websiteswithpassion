@@ -1,0 +1,182 @@
+<% include ../partials/headera %>
+<div class="col-lg-6 col-md-12" id="form">
+	<div class="row justify-content-center">
+		<div class="col-lg-8 col-md-12" style="margin-top: 5%">
+			<div id="form1">
+				<a href="/website-orders/description">
+					<i class="fas fa-arrow-left"></i>
+					<%= language.__('Wróć do strony z opisem oferty') %>
+				</a>
+				<h1 class="login">
+                    <%= language.__('Wyślij zamówienie') %>
+                   
+                </h1>
+                <p id="description_r"><%= language.__('Podaj dokładne dane w poniższym formularzu') %></p>
+				<% if(error.length > 0){ %>
+					<div class="alert alert-danger" role="alert">
+						<%= error %>
+					</div>
+				<% } %>
+
+                    
+                        <div class="form-floating mb-3">
+                       
+                            <select id="select" name="type" class="form-select">
+                                <option style="color: black;"><%= language.__("Wybierz typ zamówienia") %></option>
+                                <option value="new" style="color:black"><%= language.__('Nowa strona') %></option>
+                                <option value="update" style="color:black"><%= language.__('Aktualizacja wyglądu / strony') %></option>
+                            </select>
+                            <label for="select" class="username">
+                                <%= language.__('Typ zamówienia') %>
+                                
+                            </label>
+                            
+                        </div>
+                        
+                            
+                            
+                            <div id="new">
+                                <form action="/website-orders" method="post" id="newForm">
+                                    <div class="form-floating mb-3">
+                        
+                                        <input required autocomplete="off" type="text" id="websiteTitleN" name="websiteTitleN" placeholder="<%= language.__('np.') %> Portfolio" class="form-control">
+                                        <label for="websiteTitleN" class="username">
+                                            <%= language.__('Nazwa strony') %>
+                                            
+                                        </label>
+                                        
+                                    </div>
+                                
+                                    <input type="text" value="new" name="typeN" hidden>
+                                    <div class="form-floating mb-3">
+                        
+                                        <textarea required name="whatYouWishN" id="description" placeholder="<%= language.__('np.') %> <%= language.__('Strona bardziej dostosowana do urządzeń mobilnych') %>" class="form-control"></textarea>
+                                        <label for="description" class="username">
+                                            <%= language.__('Czego oczekujesz po stronie') %>
+                                            
+                                        </label>
+                                        
+                                    </div>
+                                    <div class="form-floating mb-3">
+                        
+                                        <input required autocomplete="off" type="number" name="budgetN" id="budgetN" placeholder="<%= language.__('np.') %> jankowalski@gmail.com" class="form-control">
+                                        <label for="budgetN" class="username">
+                                            <%= language.__('Maksymalny budżet') %>
+                                            
+                                        </label>
+                                        
+                                    </div>
+                                    <div class="form-floating mb-3">
+                        
+                                        <input required autocomplete="off" type="text" name="nameN" id="nameN" placeholder="<%= language.__('np.') %> Jan Kowalski" class="form-control">
+                                        <label for="nameN" class="username">
+                                            <%= language.__('Imię i nazwisko') %>
+                                            
+                                        </label>
+                                        
+                                    </div>
+                                
+                                    <div class="form-floating mb-3">
+                        
+                                        <input required autocomplete="off" type="email" name="emailN" id="emailN" placeholder="<%= language.__('np.') %> jankowalski@gmail.com" class="form-control">
+                                        <label for="emailN" class="username">
+                                            <%= language.__('Email kontaktowy') %>
+                                            
+                                        </label>
+                                        
+                                    </div>
+                                    <input required type="submit" value="<%= language.__('Wyślij zamówienie') %>" class="btn btn-primary button" id="newButton">
+                                </form>
+                            </div>
+                            <div id="update">
+                               
+                                <form action="/website-orders" method="post" id="updateForm">
+                                    <div class="form-floating mb-3">
+                       
+                                        <input required autocomplete="off" type="text" name="websiteTitle" id="websiteTitle" placeholder="<%= language.__('np.') %> Portfolio" class="form-control">
+                                        <label for="websiteTitle" class="username">
+                                            <%= language.__('Nazwa strony') %>
+                                            
+                                        </label>
+                                        
+                                    </div>
+                                    <input type="text" value="update" name="typeU" hidden>
+                                    <div class="form-floating mb-3">
+                           
+                                        <input required autocomplete="off" type="text" name="previousWebsite" id="previousWebsite" placeholder="<%= language.__('np.') %> https://wwww.danmag.pl" class="form-control">
+                                        <label for="previousWebsite" class="username">
+                                            <%= language.__('Link do aktualnej wersji') %>
+                                            
+                                        </label>
+                                        
+                                    </div>
+                                
+                                    
+                                    <div class="form-floating mb-3">
+                           
+                                        <textarea required name="whatYouWish" id="description" placeholder="<%= language.__('np.') %> <%= language.__('Strona bardziej dostosowana do urządzeń mobilnych') %>" class="form-control"></textarea>
+                                        <label for="description" class="username">
+                                            <%= language.__('Czego oczekujesz po aktualizacji') %>
+                                            
+                                        </label>
+                                        
+                                    </div>
+                                    <div class="form-floating mb-3">
+                        
+                                        <input required autocomplete="off" type="number" name="budget" id="budget" placeholder="<%= language.__('np.') %> jankowalski@gmail.com" class="form-control">
+                                        <label for="budget" class="username">
+                                            <%= language.__('Maksymalny budżet') %>
+                                            
+                                        </label>
+                                        
+                                    </div>
+                                    <div class="form-floating mb-3">
+                           
+                                        <input required autocomplete="off" type="text" name="name" id="name" placeholder="<%= language.__('np.') %> Jan Kowalski" class="form-control">
+                                        <label for="name" class="username">
+                                            <%= language.__('Imię i nazwisko') %>
+                                            
+                                        </label>
+                                        
+                                    </div>
+                                   
+                                    <div class="form-floating mb-3">
+                           
+                                        <input required autocomplete="off" type="email" name="email" id="email" placeholder="<%= language.__('np.') %> jankowalski@gmail.com" class="form-control">
+                                        <label for="email" class="username">
+                                            <%= language.__('Email kontaktowy') %>
+                                            
+                                        </label>
+                                        
+                                    </div>
+                                    <input type="submit" value="<%= language.__('Wyślij zamówienie') %>" class="btn btn-primary button" id="updateButton">
+                                </form>
+                                
+                            </div>
+                        
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/script.js" async></script>
+<script>
+    let updateForm = document.getElementById("updateForm");
+let updateButton = document.getElementById("updateButton");
+
+updateForm.addEventListener("submit", () => {
+    updateButton.setAttribute("disabled", "disabled");
+    updateButton.value = `<%= language.__("Wysyłanie zamówienia...") %>`;
+})
+
+let newForm = document.getElementById("newForm");
+let newButton = document.getElementById("newButton");
+
+newForm.addEventListener("submit", () => {
+    newButton.setAttribute("disabled", "disabled");
+    newButton.value = `<%= language.__("Wysyłanie zamówienia...") %>`;
+})
+</script>
+<%- include("../partials/footera") %>

@@ -1,0 +1,126 @@
+<% include ../partials/header %>
+
+<br>
+<br>
+<br>
+<br>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="text-center" id="subpageTitle">
+                    <%= language.__("Projekty dla parametru") %>: 
+                    <% if(lang==="pl"){ %>
+                        <%= category.title %>
+                   <% } else { %>
+                        <%= category.titleEn %>
+                   <% } %>
+                </h1>
+                <div class="text-center">
+                    <div class="dropdown">
+                        <button onclick="myFunction()" class="btn btn-primary button-small button-orange dropbtn "><%= language.__("Wybierz inną kategorię") %></button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <% if(currentUser){ %>
+                                <a class="dropdown-item" href="/projects/category/<%= category.link %>/edit">Edytuj kategorię</a>
+                                <a class="dropdown-item" href="/projects/category/<%= category._id %>/delete">Usuń kategorię</a>
+                                <a class="dropdown-item" href="/projects/category/<%= category._id %>/addP">Dodaj projekt</a>
+                            <% } %>
+                            <% otherCategories.forEach((otherCategory) => { %>
+                                <% if(otherCategory.title === category.title){ %>
+                                    <a class="dropdown-item active" href= "/projects/category/<%= otherCategory.link %>">
+                                        <% if(lang==="pl"){ %>
+                                            <%= otherCategory.title %>
+                                       <% } else { %>
+                                            <%= otherCategory.titleEn %>
+                                       <% } %>
+                                    </a>
+                                <% } else { %>
+                                    <a class="dropdown-item" href= "/projects/category/<%= otherCategory.link %>">
+                                        <% if(lang==="pl"){ %>
+                                            <%= otherCategory.title %>
+                                       <% } else { %>
+                                            <%= otherCategory.titleEn %>
+                                       <% } %>
+                                    </a>
+                                <% } %>
+                            <% }) %>
+                        </div>
+                    </div>
+                    
+                </div>
+                <br>
+            </div>
+        </div>
+            <div class="row">
+                <% if(category.projects.length===0){ %>
+                    <div class="col-lg-12">
+                        <div class="alert alert-danger">
+                            <%= language.__("Nie mam dostępnych projektów dla parametru") %>: <%= category.title %>
+                        </div>
+                    </div>
+                <% } else { %>
+                    <% for(let i=category.projects.length-1; i>=0; i--){ %>
+                        <div class="col-lg-4 col-md-12" style="margin-top: 8px">
+                            <div class="card">
+                                <% if(category.projects[i].link !== 'undefined'){ %>
+                                   
+                                    <a href="<%= category.projects[i].link %>"><img src="<%= category.projects[i].profile %>" alt="Strona" class="card-img-top"></a>
+                               
+                            <% } else { %>
+                                    <img src="<%= category.projects[i].profile %>" alt="Strona" class="card-img-top">
+                            <% } %>
+                            
+                            
+                            
+                            <div class="card-body">
+                                <div class="card-title">
+                                    <a href="/projects/<%= category.projects[i].subpageLink %>" id="name"><%= category.projects[i].title %></a>
+                                    
+                                    
+                                </div>
+                                    <p class="additionalInfos" style="color: <%= category.color %>">
+                                        <i class="fas fa-tag"></i>
+                                        <% if(lang==="pl"){ %>
+                                            <%= category.title %>
+                                       <% } else { %>
+                                            <%= category.titleEn %>
+                                       <% } %>
+                                    </p>
+                                    
+                                    <% if(lang==="pl"){ %>
+                                         <p class="project_description"><%- category.projects[i].description.substring(0,200) %>...</p>
+                                    <% } else { %>
+                                         <p class="project_description"><%- category.projects[i].en.substring(0,200) %>...</p>
+                                    <% } %>
+                                    <a href="/projects/<%= category.projects[i].subpageLink %>" class="btn btn-primary button-small button-orange"><%= language.__("Czytaj więcej") %></a>
+                                </div>
+                            </div>
+                        </div>
+                    <% } %>
+                <% } %>
+                
+                   
+            </div>
+           
+       
+    </div>
+    <script>
+        
+        function myFunction() {
+          document.getElementById("myDropdown").classList.toggle("show");
+        }
+        
+        
+        window.onclick = function(event) {
+          if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+              var openDropdown = dropdowns[i];
+              if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+              }
+            }
+          }
+        }
+        </script>
+<% include ../partials/footer %>
